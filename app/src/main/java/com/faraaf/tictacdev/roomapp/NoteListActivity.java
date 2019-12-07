@@ -72,10 +72,10 @@ public class NoteListActivity extends AppCompatActivity implements NotesAdapter.
     }
 
     private void initializeVies() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        textViewMsg = (TextView) findViewById(R.id.tv__empty);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        textViewMsg = findViewById(R.id.tv__empty);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(listener);
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(NoteListActivity.this));
@@ -119,10 +119,7 @@ public class NoteListActivity extends AppCompatActivity implements NotesAdapter.
                                 break;
                             case 1:
                                 NoteListActivity.this.pos = pos;
-                                startActivityForResult(
-                                        new Intent(NoteListActivity.this, AddNoteActivity.class).putExtra("note", notes.get(pos)),
-                                        100);
-
+                                startActivityForResult(new Intent(NoteListActivity.this, AddNoteActivity.class).putExtra("note", notes.get(pos)), 100);
                                 break;
                         }
                     }
@@ -133,8 +130,7 @@ public class NoteListActivity extends AppCompatActivity implements NotesAdapter.
     private void listVisibility() {
         int emptyMsgVisibility = View.GONE;
         if (notes.size() == 0) { // no item to display
-            if (textViewMsg.getVisibility() == View.GONE)
-                emptyMsgVisibility = View.VISIBLE;
+            if (textViewMsg.getVisibility() == View.GONE) emptyMsgVisibility = View.VISIBLE;
         }
         textViewMsg.setVisibility(emptyMsgVisibility);
         notesAdapter.notifyDataSetChanged();
@@ -145,4 +141,6 @@ public class NoteListActivity extends AppCompatActivity implements NotesAdapter.
         noteDatabase.cleanUp();
         super.onDestroy();
     }
+
+
 }
