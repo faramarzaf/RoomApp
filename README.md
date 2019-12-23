@@ -25,16 +25,67 @@ We have 3 components of room.
 - **Entity**: Instead of creating the SQLite table, we will create the Entity. Entity is nothing but a model class annotated with `@Entity`. The variables of this class is our columns, and the class is our table.  
 
 ```java
-@Entity
-public class User {
-    @PrimaryKey
-    public int uid;
-
-    @ColumnInfo(name = "first_name")
-    public String firstName;
-
-    @ColumnInfo(name = "last_name")
-    public String lastName;
+ @Entity
+public class Task implements Serializable {
+ 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+ 
+    @ColumnInfo(name = "task")
+    private String task;
+ 
+    @ColumnInfo(name = "desc")
+    private String desc;
+ 
+    @ColumnInfo(name = "finish_by")
+    private String finishBy;
+ 
+    @ColumnInfo(name = "finished")
+    private boolean finished;
+ 
+ 
+    /*
+    * Getters and Setters
+    * */
+    public int getId() {
+        return id;
+    }
+ 
+    public void setId(int id) {
+        this.id = id;
+    }
+ 
+    public String getTask() {
+        return task;
+    }
+ 
+    public void setTask(String task) {
+        this.task = task;
+    }
+ 
+    public String getDesc() {
+        return desc;
+    }
+ 
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+ 
+    public String getFinishBy() {
+        return finishBy;
+    }
+ 
+    public void setFinishBy(String finishBy) {
+        this.finishBy = finishBy;
+    }
+ 
+    public boolean isFinished() {
+        return finished;
+    }
+ 
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
 }
 ```
 
