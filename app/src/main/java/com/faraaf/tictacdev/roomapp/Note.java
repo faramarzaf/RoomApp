@@ -8,9 +8,6 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 import java.io.Serializable;
 
-/**
- * Created by Pavneet_Singh on 12/30/17.
- */
 
 @Entity(tableName = Constants.TABLE_NAME_NOTE)
 public class Note implements Serializable {
@@ -26,12 +23,6 @@ public class Note implements Serializable {
 
     private Date date;
 
-//    public Note(int note_id, String content, String title, Date date) {
-//        this.note_id = note_id;
-//        this.content = content;
-//        this.title = title;
-//        this.date = date;
-//    }
 
     public Note(String content, String title) {
         this.content = content;

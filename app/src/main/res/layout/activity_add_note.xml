@@ -25,13 +25,12 @@
         android:layout_below="@+id/txtInput"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtInput2"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_content"
                 android:hint="Content"
@@ -43,9 +42,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:background="#457"
+            android:background="#889CC9"
             android:id="@+id/but_save"
             android:text="Save"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
